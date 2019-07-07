@@ -4,7 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import {OwnersModule} from './owners/owners.module';
+import {PetsModule} from './pets/pets.module';
+import {VisitsModule} from './visits/visits.module';
+import {PetTypesModule} from './pettypes/pettypes.module';
+import {VetsModule} from './vets/vets.module';
+import {PartsModule} from './parts/parts.module';
+import {SpecialtiesModule} from './specialties/specialties.module';
+
 import { AppRoutingModule } from './app-routing.module';
+import {HttpErrorHandler} from './error.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
@@ -31,10 +41,20 @@ import { TodoComponent } from './todo/todo.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    OwnersModule,
+    PetsModule,
+    VisitsModule,
+    PetTypesModule,
+    VetsModule,
+    SpecialtiesModule,
+    PartsModule,
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [
-     {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
+     {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true },
+    HttpErrorHandler,
   ],
   bootstrap: [AppComponent]
 })

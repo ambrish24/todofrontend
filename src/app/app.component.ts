@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {HardcodedAuthenticationService} from './service/hardcoded-authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo';
-  message = 'Welcome to in28Minutes';
+  message = 'Welcome to Spring - Angular Application';
+  constructor(private hardcodedAuthenticationService
+                : HardcodedAuthenticationService) { }
 }

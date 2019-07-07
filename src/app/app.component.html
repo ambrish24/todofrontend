@@ -1,13 +1,92 @@
-<!--<app-welcome></app-welcome>-->
+<div class="container-fluid">
 
-<!-- <app-login></app-login> -->
-<!--
-<div>Component Content</div>-->
+  <nav class="navbar navbar-default " role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><span></span></a>
+      </div>
 
-<app-menu></app-menu>
+      <ul class="nav navbar-nav">
+        <li>
+          <a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/" title="home page">
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            <span>Home</span>
+          </a>
+        </li>
 
-<div class="container">
-    <router-outlet></router-outlet>
+        <li class="dropdown">
+          <a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" class="dropdown-toggle" data-toggle="dropdown" role="button"
+             aria-haspopup="true" aria-expanded="false">Owners<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/owners"><span class="glyphicon glyphicon-search"
+                                              aria-hidden="true"></span><span> All</span></a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/owners/add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span> Add New</span></a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" class="dropdown-toggle" data-toggle="dropdown" role="button"
+             aria-haspopup="true" aria-expanded="false">Veterinarians<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/vets"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> All</span></a>
+            </li>
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/vets/add"><span class="glyphicon glyphicon-plus"
+                                                aria-hidden="true"></span><span> Add New</span></a></li>
+          </ul>
+        </li>
+        <li>
+          <a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/pettypes" routerLinkActive="active" title="pettypes">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+            <span>Pet Types</span>
+          </a>
+        </li>
+        <li>
+          <a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/specialties" routerLinkActive="active" title="specialties">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+            <span>Specialties</span>
+          </a>
+        </li>
+        <li>
+          <a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/todos" routerLinkActive="active" title="todos">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+            <span>ToDos</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-collapse justify-content-end">
+        <li class="nav-item">
+          <a *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/login" routerLinkActive="active" title="Login">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+            <span>Login</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/logout" routerLinkActive="active" title="Logout">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
 </div>
 
-<app-footer></app-footer>
+
+
+<router-outlet></router-outlet>
+
+<br/>
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center"><img src="./assets/images/angular.png"
+                                         alt="Angular" height="80" width="80"/>
+      <img src="./assets/images/spring-pivotal-logo.png"
+           alt="Sponsored by Pivotal"/></div>
+  </div>
+</div>

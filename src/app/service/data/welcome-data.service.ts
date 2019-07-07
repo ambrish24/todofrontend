@@ -18,7 +18,7 @@ export class WelcomeDataService {
     return this.http.get<HelloWorldBean>('http://localhost:8080/hello-world-bean');
     //console.log("Execute Hello World Bean Service")
   }
-  //http://localhost:8080/hello-world/path-variable/in28minutes
+  //http://localhost:8080/hello-world/path-variable/narendra
 
   executeHelloWorldServiceWithPathVariable(name) {
     // let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
@@ -35,17 +35,17 @@ export class WelcomeDataService {
   }
 
   // createBasicAuthenticationHttpHeader() {
-  //   let username = 'in28minutes'
-  //   let password = 'dummy'
+  //   let username = 'narendra'
+  //   let password = '123'
   //   let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
   //   return basicAuthHeaderString;
   // }
   //Access to XMLHttpRequest at 
-  //'http://localhost:8080/hello-world/path-variable/in28minutes' 
+  //'http://localhost:8080/hello-world/path-variable/narendra'
   //from origin 'http://localhost:4200' has been blocked by CORS policy: 
   //No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
-  //Access to XMLHttpRequest at 'http://localhost:8080/hello-world/path-variable/in28minutes' from origin 'http://localhost:4200' 
+  //Access to XMLHttpRequest at 'http://localhost:8080/hello-world/path-variable/narendra' from origin 'http://localhost:4200'
   //has been blocked by CORS policy: 
   //Response to preflight request doesn't pass 
   //access control check: It does not have HTTP ok status

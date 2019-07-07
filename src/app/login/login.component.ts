@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  username = 'in28minutes'
+  username = 'narendra'
   password = ''
   errorMessage = 'Invalid Credentials'
   invalidLogin = false
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   handleLogin() {
     // console.log(this.username);
-    //if(this.username==="in28minutes" && this.password === 'dummy') {
+    //if(this.username==="narendra" && this.password === '123') {
     if(this.hardcodedAuthenticationService.authenticate(this.username, this.password)) {
       //Redirect to Welcome Page
       this.router.navigate(['welcome', this.username])
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
 
   handleBasicAuthLogin() {
     // console.log(this.username);
-    //if(this.username==="in28minutes" && this.password === 'dummy') {
+    //if(this.username==="narendra" && this.password === '123') {
     this.basicAuthenticationService.executeAuthenticationService(this.username, this.password)
         .subscribe(
           data => {
